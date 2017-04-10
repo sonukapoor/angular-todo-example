@@ -1,3 +1,4 @@
 <h1>{{title}}</h1>
+<p>Summary: {{summary()}}</p>
 <p *ngFor="let item of thingsToDo; let i = index" id="{{i}}">({{i}}) {{item}}</p>
 <p *ngIf="thingsCompleted.length == 0">Nothing completed</p>
