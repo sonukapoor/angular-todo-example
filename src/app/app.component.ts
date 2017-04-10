@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor() {
     setInterval(() => {
-      this.thingsCompleted.push('done!');
+      this.thingsToDo.push('make coffee');
     }, 1000);
   }
 
