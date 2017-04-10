@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input() heading: string;
+  @Input() thingsToDo: string[];
 
   constructor() { }
 

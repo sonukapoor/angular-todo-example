@@ -1,3 +1,2 @@
 <h1>{{title}}</h1>
-<p *ngFor="let item of thingsToDo; let i = index" id="{{i}}">({{i}}) {{item}}</p>
-<app-to-do-list [heading]="'Things To Do'"></app-to-do-list>
+<app-to-do-list [thingsToDo]="thingsToDo"></app-to-do-list>
