@@ -1,7 +1,3 @@
 <ul>
   <li *ngFor="let item of thingsToDo; let i = index" id="{{i}}">{{item}}</li>
 </ul>
-<p>
-  <input #newItem placeholder="item"/>
-  <button (click)="addToDo(newItem)">+</button>
-</p>

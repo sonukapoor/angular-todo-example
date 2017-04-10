@@ -13,9 +13,4 @@ export class ToDoListComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  addToDo(text: HTMLInputElement) {
-    this.thingsToDo.push(text.value);
-    text.value = '';
-  }
 }
