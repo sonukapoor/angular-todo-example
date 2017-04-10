@@ -1,4 +1,2 @@
 <h1>{{title}}</h1>
-<ul>
-  <li *ngFor="let item of thingsToDo">{{item}}</li>
-</ul>
+<p *ngFor="let item of thingsToDo; let i = index" id="{{i}}">({{i}}) {{item}}</p>
