@@ -14,12 +14,6 @@ export class AppComponent {
   ];
   thingsCompleted = [];
 
-  constructor() {
-    setInterval(() => {
-      this.thingsToDo.push('make coffee');
-    }, 1000);
-  }
-
   summary(): string {
     return `${this.thingsToDo.length} done / ${this.thingsCompleted.length} to do`;
   }
