@@ -1,4 +1,8 @@
-<p>
-  <input #newItem placeholder="item"/>
-  <button (click)="addToDo(newItem)">+</button>
-</p>
+<form #newItemForm="ngForm" (ngSubmit)="addToDo(newItemForm)">
+  <p>
+    New Item: <input name="newItem" ngModel>
+    <button type="submit">Add</button>
+  </p>
+</form>
+<p>Form valid: {{newItemForm.valid}}</p>
+<p>Form control value: {{newItemForm.value.newItem}}</p>
