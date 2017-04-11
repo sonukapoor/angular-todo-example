@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../store';
+import { AppState, ITEM_DELETE } from '../store';
 
 @Component({
   selector: 'app-to-do-list',
@@ -20,5 +20,9 @@ export class ToDoListComponent implements OnInit {
     this.store
       .select('items')
       .subscribe((items: string[]) => {this.thingsToDo = items.slice();});
+  }
+
+  onDelete(item) {
+    this.store.dispatch({type: ITEM_DELETE, payload: item});
   }
 }
