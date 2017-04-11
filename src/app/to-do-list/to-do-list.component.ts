@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store';
 
 @Component({
   selector: 'app-to-do-list',
@@ -7,10 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input() thingsToDo: string[];
+  thingsToDo: string[];
 
-  constructor() { }
+  constructor(
+    private store: Store<AppState>
+  ) {
+  }
 
   ngOnInit() {
+    this.store
+      .select('items')
+      .subscribe((items: string[]) => {this.thingsToDo = items.slice();});
   }
 }
