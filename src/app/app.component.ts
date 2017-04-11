@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { Observable } from 'rxjs/Observable';
 
+import { ToDoService } from './to-do.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +12,10 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
 
   title = 'To Do';
-  thingsToDo = [
-    'Learn JavaScript',
-    'Learn Angular',
-    'Learn Redux'
-  ];
+
+  constructor(private toDoService: ToDoService) { }
 
   onNewItem(item: string) {
-    this.thingsToDo.push(item);
+    this.toDoService.addItem(item);
   }
 }

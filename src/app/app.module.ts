@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { GenericInputComponent } from './generic-input/generic-input.component';
+import { ToDoService } from './to-do.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { GenericInputComponent } from './generic-input/generic-input.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ToDoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
