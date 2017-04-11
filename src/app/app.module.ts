@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { GenericInputComponent } from './generic-input/generic-input.component';
+import { TitlecasePipe } from './titlecase.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoListComponent,
-    GenericInputComponent
+    GenericInputComponent,
+    TitlecasePipe
   ],
   imports: [
     BrowserModule,
