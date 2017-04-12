@@ -1,4 +1,14 @@
-<p>
-  <input #newItem placeholder="item"/>
-  <button (click)="addToDo(newItem)">+</button>
-</p>
+<form [formGroup]="textEntryForm" (ngSubmit)="addToDo()">
+  <p>
+    Item: <input [formControl]="textEntryControl">
+    <button type="submit">Add</button>
+  </p>
+  <ul [hidden]="textEntryControl.valid || textEntryControl.untouched">
+    <li [hidden]="!textEntryControl.hasError('minlength')">
+      Item must have at least five characters
+    </li>
+    <li [hidden]="!textEntryControl.hasError('timeFormat')">
+      Invalid time format
+    </li>
+  </ul>
+</form>
