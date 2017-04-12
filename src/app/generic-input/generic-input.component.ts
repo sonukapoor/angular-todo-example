@@ -8,9 +8,9 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class GenericInputComponent implements OnInit {
 
+  @Output() newItem: EventEmitter<string> = new EventEmitter();
   textEntryForm: FormGroup;
   textEntryControl: FormControl;
-  @Output() newItem: EventEmitter<string> = new EventEmitter();
 
   constructor(
     private builder: FormBuilder
