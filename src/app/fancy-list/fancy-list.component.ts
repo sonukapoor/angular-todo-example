@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ToDoService } from '../to-do.service';
 
 @Component({
-  selector: 'app-to-do-list',
-  templateUrl: './to-do-list.component.html',
-  styleUrls: ['./to-do-list.component.css']
+  selector: 'app-fancy-list',
+  templateUrl: './fancy-list.component.html',
+  styleUrls: ['./fancy-list.component.css']
 })
-export class ToDoListComponent implements OnInit {
+export class FancyListComponent implements OnInit {
 
   thingsToDo: string[];
 
