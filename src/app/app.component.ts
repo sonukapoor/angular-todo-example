@@ -13,7 +13,9 @@ export class AppComponent {
 
   title = 'To Do';
 
-  constructor(private toDoService: ToDoService) { }
+  constructor(
+    private toDoService: ToDoService
+  ) { }
 
   onNewItem(item: string) {
     this.toDoService.addItem(item);

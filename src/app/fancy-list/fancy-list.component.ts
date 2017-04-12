@@ -10,7 +10,10 @@ export class FancyListComponent implements OnInit {
 
   thingsToDo: string[];
 
-  constructor(private toDoService: ToDoService) { }
+  constructor(
+    private toDoService: ToDoService
+  ) {
+  }
 
   ngOnInit() {
     this.toDoService.getChanges().subscribe((newItems) => {
