@@ -1,4 +1,7 @@
 <h1>{{title}}</h1>
-<app-to-do-list [thingsToDo]="thingsToDo"></app-to-do-list>
-<app-fancy-list [thingsToDo]="thingsToDo"></app-fancy-list>
+<nav>
+  <a [routerLink]="['/todo']">Classic</a>
+  <a [routerLink]="['/fancy']">Fancy</a>
+</nav>
+<router-outlet></router-outlet>
 <app-generic-input (newItem)="onNewItem($event)"></app-generic-input>

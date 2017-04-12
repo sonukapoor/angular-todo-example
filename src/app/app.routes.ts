@@ -4,6 +4,6 @@ import { FancyListComponent } from './fancy-list/fancy-list.component';
 
 export const routeConfig: Routes = [
   { path: '', redirectTo: '/todo', pathMatch: 'full' },
-  { path: '/todo', component: ToDoListComponent },
-  { path: '/fancy', component: FancyListComponent }
+  { path: 'todo', component: ToDoListComponent },
+  { path: 'fancy', component: FancyListComponent }
 ];
