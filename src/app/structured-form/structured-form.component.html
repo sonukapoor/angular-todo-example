@@ -1,0 +1,27 @@
+<form [formGroup]="mainForm">
+
+  <div class="panel panel-default" formGroupName="responsible">
+    <p>
+      Name:
+      <input class="form-control" type="text" name="name" id="name" [formControl]="name">
+    </p>
+    <p>
+      Email:
+      <input class="form-control" type="input" name="email" id="email" [formControl]="email">
+    </p>
+  </div>
+
+  <div class="panel panel-default" formGroupName="task">
+    <p>
+      Text:
+      <input class="form-control" type="text" name="text" id="text" [formControl]="text">
+    </p>
+    <p>
+      Estimate:
+      <input class="form-control" type="text" name="estimate" id="estimate" [formControl]="estimate">
+    </p>
+  </div>
+
+  <button type="submit" (click)="addToDo()">Add</button>
+
+</form>

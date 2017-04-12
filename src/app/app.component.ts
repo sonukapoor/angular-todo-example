@@ -10,11 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
 
   title = 'To Do';
-  thingsToDo = [
-    'Learn JavaScript',
-    'Learn Angular',
-    'Learn Redux'
-  ];
+  thingsToDo = [];
 
   onNewItem(item: string) {
     this.thingsToDo.push(item);
