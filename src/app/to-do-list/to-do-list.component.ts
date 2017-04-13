@@ -8,7 +8,7 @@ import { ToDoService } from '../to-do.service';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input() thingsToDo: string[];
+  thingsToDo: string[];
 
   constructor(private toDoService: ToDoService) { }
 
