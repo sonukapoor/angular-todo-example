@@ -1,7 +1,18 @@
 {
-  "items": [
-    "Learn JavaScript",
-    "Learn Node",
-    "Learn Angular"
-  ]
+  "items": {
+    "todo": [
+      {
+        "id": 0,
+        "text": "Learn JavaScript"
+      },
+      {
+        "id": 1,
+        "text": "Learn Node"
+      },
+      {
+        "id": 2,
+        "text": "Learn Angular"
+      }
+    ]
+  }
 }
