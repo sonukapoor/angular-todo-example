@@ -37,4 +37,22 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('To Do');
   }));
+
+  describe('the itemCount method', () => {
+
+    let app: AppComponent;
+    let mockToDoService;
+
+    beforeEach(() => {
+      mockToDoService = {
+        onNewItem: (item: string) => {}
+        itemCount: () => 3
+      };
+      app = new AppComponent(mockToDoService);
+    });
+
+    it('should return the number of items', () => {
+      expect(app.itemCount()).toEqual(3);
+    });
+  });
 });

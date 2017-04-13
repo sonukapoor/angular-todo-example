@@ -18,4 +18,8 @@ export class AppComponent {
   onNewItem(item: string) {
     this.toDoService.addItem(item);
   }
+
+  itemCount() {
+    return this.toDoService.itemCount();
+  }
 }

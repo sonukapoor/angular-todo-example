@@ -17,4 +17,9 @@ export class ToDoService {
     this.items.push(item);
     this.changes.next(this.items);
   }
+
+  itemCount() {
+    console.log('to-do service itemCount');
+    return this.items.length;
+  }
 }
