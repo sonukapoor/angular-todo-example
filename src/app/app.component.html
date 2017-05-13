@@ -1,7 +1,9 @@
 <h1>{{title}}</h1>
+
 <nav>
-  <a [routerLink]="['/todo']">Classic</a>
-  <a [routerLink]="['/fancy']">Fancy</a>
+  <a [routerLink]="['/todo']">To Do List</a>
+  <a [routerLink]="['/about']">About Us</a>
+  <a [routerLink]="['/contact']">Contact Us</a>
 </nav>
+
 <router-outlet></router-outlet>
-<app-generic-input (newItem)="onNewItem($event)"></app-generic-input>

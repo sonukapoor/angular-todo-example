@@ -1,3 +1,6 @@
+<h2>To Do list</h2>
 <ul>
-  <li *ngFor="let item of thingsToDo; let i = index" id="{{i}}">{{item}}</li>
+  <li *ngFor="let item of thingsToDo; let i = index" id="{{i}}">
+    <a [routerLink]="['/todo-details', i]">{{item}}</a>
+  </li>
 </ul>
