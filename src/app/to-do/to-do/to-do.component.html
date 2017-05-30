@@ -1,0 +1,8 @@
+<li>
+  {{ todoItem.description }} {{ todoItem.completed }}
+  <button (onclick)="onCompleteChange(todoItem)">
+      Completed
+  </button>
+  <ng-content select="[app-action]">
+  </ng-content>
+</li>

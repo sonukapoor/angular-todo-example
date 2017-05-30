@@ -1,3 +1,4 @@
+import { IToDoItem } from './../to-do.type';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input() thingsToDo: string[];
+  @Input() todoItems: IToDoItem[];
 
   constructor() { }
 
