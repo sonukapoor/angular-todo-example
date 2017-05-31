@@ -1,9 +1,13 @@
-<app-to-do-input (addItem)="addItem($event)"></app-to-do-input>
+<app-to-do-input (addItem)="addItem($event)">
+
+</app-to-do-input>
 
 <app-to-do-list>
   <app-to-do 
+    (onDeleteToDoItem)="onDeleteToDoItem($event)"
+    (onToggleToDoItem)="onToggleToDoItem($event)"
     [todoItem]="todoItem"
     *ngFor="let todoItem of todoItems">
-
+  
   </app-to-do>
 </app-to-do-list>

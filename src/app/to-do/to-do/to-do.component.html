@@ -1,8 +1,10 @@
 <li>
-  {{ todoItem.description }} {{ todoItem.completed }}
-  <button (onclick)="onCompleteChange(todoItem)">
-      Completed
+  <span [ngClass]="{complete: todoItem.completed}">{{todoItem.description}}</span> 
+  <button (click)="toggleToDoItem(todoItem.id)">
+      Complete
   </button>
-  <ng-content select="[app-action]">
-  </ng-content>
+  <button (click)="deleteToDoItem(todoItem.id)">
+      Delete
+  </button>
+  
 </li>

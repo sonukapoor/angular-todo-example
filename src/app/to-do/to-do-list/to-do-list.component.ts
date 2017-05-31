@@ -1,5 +1,5 @@
-import { IToDoItem } from './../to-do.type';
 import { Component, OnInit, Input } from '@angular/core';
+import { IToDoItem } from './../to-do.type';
 
 @Component({
   selector: 'app-to-do-list',

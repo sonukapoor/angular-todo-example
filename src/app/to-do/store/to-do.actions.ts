@@ -1,6 +1,6 @@
-import { IToDoItem } from './../to-do.type';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
+import { IToDoItem } from './../to-do.type';
 
 @Injectable()
 export class ToDoActions {
@@ -15,17 +15,17 @@ export class ToDoActions {
     };
   }
 
-  updateItem(item: IToDoItem) {
+  toggleItem(itemId: number) {
     return {
       type: ToDoActions.TOGGLE_TODO,
-      payload: item,
+      payload: itemId,
     };
   }
 
-  deleteItem(item: IToDoItem) {
+  deleteItem(itemId: number) {
     return {
       type: ToDoActions.REMOVE_TODO,
-      payload: item,
+      payload: itemId,
     };
   }
 }

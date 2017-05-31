@@ -1,5 +1,5 @@
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IToDoItem } from './../to-do.type';
-import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-to-do',
@@ -9,14 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ToDoComponent implements OnInit {
 
   @Input() todoItem: IToDoItem;
+  @Output() onToggleToDoItem: EventEmitter<number> = new EventEmitter();
+  @Output() onDeleteToDoItem: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onCompleteChange(item: IToDoItem) {
-
+  toggleToDoItem(itemId: number) {
+    this.onToggleToDoItem.emit(itemId);
   }
 
+  deleteToDoItem(itemId: number) {
+    this.onDeleteToDoItem.emit(itemId);
+  }
 }

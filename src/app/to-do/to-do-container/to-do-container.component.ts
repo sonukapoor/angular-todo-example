@@ -1,10 +1,10 @@
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+
 import { ToDoActions } from './../store/to-do.actions';
 import { AppState } from './../store/to-do.store';
-import { ServerService } from '../server.service';
 import { IToDoItem } from '../to-do.type';
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-to-do-container',
@@ -16,7 +16,6 @@ export class ToDoContainerComponent implements OnInit {
   todoItems: IToDoItem[];
 
   constructor(
-    private serverService: ServerService,
     private store: Store<AppState>,
     private todoActions: ToDoActions
   ) {
@@ -39,7 +38,11 @@ export class ToDoContainerComponent implements OnInit {
     this.store.dispatch(this.todoActions.addItem(item));
   }
 
-  onCompleteChange(todoItem: IToDoItem) {
+  onDeleteToDoItem(itemId: number) {
+    this.store.dispatch(this.todoActions.deleteItem(itemId));
+  }
 
+  onToggleToDoItem(itemId: number) {
+    this.store.dispatch(this.todoActions.toggleItem(itemId));
   }
 }
