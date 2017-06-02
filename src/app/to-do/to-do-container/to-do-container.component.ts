@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { ToDoActions } from './../store/to-do.actions';
 import { AppState } from './../store/to-do.store';
 import { IToDoItem } from '../to-do.type';
+import { Filter } from '../to-do-filter/to-do-filter.type';
 
 @Component({
   selector: 'app-to-do-container',
@@ -28,7 +29,7 @@ export class ToDoContainerComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(description: string) {
+  onAddToDoItem(description: string) {
     const item: IToDoItem = {
       description,
       completed: false,
@@ -45,4 +46,9 @@ export class ToDoContainerComponent implements OnInit {
   onToggleToDoItem(itemId: number) {
     this.store.dispatch(this.todoActions.toggleItem(itemId));
   }
+
+  onFiterToDoItem(filter: Filter) {
+    // this.store.dispatch(this.todoActions.filterItem(filter));
+  }
+
 }

@@ -29,3 +29,28 @@ export class ToDoActions {
     };
   }
 }
+
+@Injectable()
+export class ToDoFilterActions {
+  static readonly SHOW_ALL = 'SHOW_ALL';
+  static readonly SHOW_COMPLETED = 'SHOW_COMPLETED';
+  static readonly SHOW_DELETED = 'SHOW_DELETED';
+
+  showAll() {
+    return {
+      type: ToDoFilterActions.SHOW_ALL
+    };
+  }
+
+  showCompleted() {
+    return {
+      type: ToDoFilterActions.SHOW_COMPLETED
+    };
+  }
+
+  showDeleted() {
+    return {
+      type: ToDoFilterActions.SHOW_DELETED
+    };
+  }
+}
