@@ -5,7 +5,6 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
 import { AppStore } from './store/to-do.store';
 
-import { ServerService } from './server.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,6 +25,6 @@ import { ToDoFilterComponent } from './to-do-filter/to-do-filter.component';
     ToDoFilterComponent
   ],
   exports: [ToDoContainerComponent],
-  providers: [ServerService, ToDoActions]
+  providers: [ToDoActions]
 })
 export class ToDoModule { }
