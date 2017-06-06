@@ -9,19 +9,9 @@ import { IToDoItem } from './../to-do.type';
 export class ToDoItemComponent implements OnInit {
 
   @Input() todoItem: IToDoItem;
-  @Output() onToggleToDoItem: EventEmitter<number> = new EventEmitter();
-  @Output() onDeleteToDoItem: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  toggleToDoItem(itemId: number) {
-    this.onToggleToDoItem.emit(itemId);
-  }
-
-  deleteToDoItem(itemId: number) {
-    this.onDeleteToDoItem.emit(itemId);
   }
 }

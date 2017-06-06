@@ -1,5 +1,5 @@
 export interface IToDoItem {
-  id: number;
-  description: string;
+  id?: number;
+  text: string;
   completed: boolean;
 }

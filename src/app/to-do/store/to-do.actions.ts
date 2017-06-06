@@ -4,53 +4,63 @@ import { IToDoItem } from './../to-do.type';
 
 @Injectable()
 export class ToDoActions {
-  static readonly ADD_TODO = 'ADD_TODO';
-  static readonly TOGGLE_TODO = 'TOGGLE_TODO';
-  static readonly REMOVE_TODO = 'REMOVE_TODO';
+
+  static readonly TODO = {
+    ADD_ITEM: 'angular-training/TODO/ADD_ITEM',
+    ADD_ITEM_SUCCESS: 'angular-training/TODO/ADD_ITEM_SUCCESS',
+    TOGGLE_ITEM: 'angular-training/TODO/TOGGLE_ITEM',
+    TOGGLE_ITEM_SUCCESS: 'angular-training/TODO/TOGGLE_ITEM_SUCCESS',
+    REMOVE_ITEM: 'angular-training/TODO/REMOVE_ITEM',
+    REMOVE_ITEM_SUCCESS: 'angular-training/TODO/REMOVE_ITEM_SUCCESS',
+    LOAD_ITEM: 'angular-training/TODO/LOAD_ITEM',
+    LOAD_ITEM_SUCCESS: 'angular-training/TODO/LOAD_ITEM_SUCCESS',
+  };
+
+  getToDoItems(): Action {
+    return {
+      type: ToDoActions.TODO.LOAD_ITEM
+    };
+  }
+
+  getToDoItemsSuccess(todoItems): Action {
+    return {
+      type: ToDoActions.TODO.LOAD_ITEM_SUCCESS,
+      payload: todoItems
+    };
+  }
 
   addItem(item: IToDoItem) {
     return {
-      type: ToDoActions.ADD_TODO,
+      type: ToDoActions.TODO.ADD_ITEM,
       payload: item,
     };
   }
 
-  toggleItem(itemId: number) {
+  addItemSuccess(item: IToDoItem): Action {
     return {
-      type: ToDoActions.TOGGLE_TODO,
-      payload: itemId,
+      type: ToDoActions.TODO.ADD_ITEM_SUCCESS,
+      payload: item
     };
   }
 
-  deleteItem(itemId: number) {
+  toggleItem(item: IToDoItem) {
     return {
-      type: ToDoActions.REMOVE_TODO,
-      payload: itemId,
-    };
-  }
-}
-
-@Injectable()
-export class ToDoFilterActions {
-  static readonly SHOW_ALL = 'SHOW_ALL';
-  static readonly SHOW_COMPLETED = 'SHOW_COMPLETED';
-  static readonly SHOW_DELETED = 'SHOW_DELETED';
-
-  showAll() {
-    return {
-      type: ToDoFilterActions.SHOW_ALL
+      type: ToDoActions.TODO.TOGGLE_ITEM,
+      payload: item,
     };
   }
 
-  showCompleted() {
+  toggleItemSuccess(item: IToDoItem) {
     return {
-      type: ToDoFilterActions.SHOW_COMPLETED
+      type: ToDoActions.TODO.TOGGLE_ITEM_SUCCESS,
+      payload: item,
     };
   }
 
-  showDeleted() {
+  deleteItem(item: IToDoItem) {
     return {
-      type: ToDoFilterActions.SHOW_DELETED
+      type: ToDoActions.TODO.REMOVE_ITEM,
+      payload: item,
     };
   }
 }

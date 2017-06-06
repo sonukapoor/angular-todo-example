@@ -1,9 +1,13 @@
+import { ApiService } from './../api/api.service';
+import { ToDoService } from './to-do.service';
+import { ToDoEffects } from './store/to-do.effects';
 import { ToDoActions } from './store/to-do.actions';
 import { ToDoInputComponent } from './to-do-input/to-do-input.component';
 import { ToDoContainerComponent } from './to-do-container/to-do-container.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
 import { AppStore } from './store/to-do.store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -15,7 +19,8 @@ import { ToDoFilterComponent } from './to-do-filter/to-do-filter.component';
   imports: [
     CommonModule,
     FormsModule,
-    StoreModule.provideStore(AppStore)
+    StoreModule.provideStore(AppStore),
+    EffectsModule.run(ToDoEffects)
   ],
   declarations: [
     ToDoContainerComponent,
@@ -25,6 +30,6 @@ import { ToDoFilterComponent } from './to-do-filter/to-do-filter.component';
     ToDoFilterComponent
   ],
   exports: [ToDoContainerComponent],
-  providers: [ToDoActions]
+  providers: [ToDoActions, ToDoService, ApiService]
 })
 export class ToDoModule { }
