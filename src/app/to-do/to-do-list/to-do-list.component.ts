@@ -8,8 +8,6 @@ import { IToDoItem } from './../to-do.type';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input() todoItems: IToDoItem[];
-
   constructor() { }
 
   ngOnInit() {

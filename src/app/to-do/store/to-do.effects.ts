@@ -22,7 +22,7 @@ export class ToDoEffects {
         .ofType(ToDoActions.TODO.TOGGLE_ITEM)
         .map(action => action.payload)
         .switchMap(item => this.service.toggleItem(item))
-        .map(item => this.todoActions.toggleItemSuccess(item));
+        .map(item => this.todoActions.updateItem(item));
 
     constructor(
         private update$: Actions,

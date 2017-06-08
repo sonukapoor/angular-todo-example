@@ -1,3 +1,4 @@
+import { ToDoFilterActions } from './store/to-do-filter.actions';
 import { ApiService } from './../api/api.service';
 import { ToDoService } from './to-do.service';
 import { ToDoEffects } from './store/to-do.effects';
@@ -30,6 +31,6 @@ import { ToDoFilterComponent } from './to-do-filter/to-do-filter.component';
     ToDoFilterComponent
   ],
   exports: [ToDoContainerComponent],
-  providers: [ToDoActions, ToDoService, ApiService]
+  providers: [ToDoActions, ToDoFilterActions, ToDoService, ApiService]
 })
 export class ToDoModule { }

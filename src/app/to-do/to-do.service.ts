@@ -25,7 +25,8 @@ export class ToDoService {
   }
 
   toggleItem(item: IToDoItem) {
+    const updatedItem =  { ...item, completed: !item.completed };
     return this.apiService.
-      put('/items/' + item.id, item);
+      put('/items/' + item.id, updatedItem);
   }
 }

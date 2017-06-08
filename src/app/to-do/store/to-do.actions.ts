@@ -9,7 +9,7 @@ export class ToDoActions {
     ADD_ITEM: 'angular-training/TODO/ADD_ITEM',
     ADD_ITEM_SUCCESS: 'angular-training/TODO/ADD_ITEM_SUCCESS',
     TOGGLE_ITEM: 'angular-training/TODO/TOGGLE_ITEM',
-    TOGGLE_ITEM_SUCCESS: 'angular-training/TODO/TOGGLE_ITEM_SUCCESS',
+    UPDATE_ITEM: 'angular-training/TODO/UPDATE_ITEM',
     REMOVE_ITEM: 'angular-training/TODO/REMOVE_ITEM',
     REMOVE_ITEM_SUCCESS: 'angular-training/TODO/REMOVE_ITEM_SUCCESS',
     LOAD_ITEM: 'angular-training/TODO/LOAD_ITEM',
@@ -50,9 +50,9 @@ export class ToDoActions {
     };
   }
 
-  toggleItemSuccess(item: IToDoItem) {
+  updateItem(item: IToDoItem) {
     return {
-      type: ToDoActions.TODO.TOGGLE_ITEM_SUCCESS,
+      type: ToDoActions.TODO.UPDATE_ITEM,
       payload: item,
     };
   }

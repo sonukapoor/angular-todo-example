@@ -10,14 +10,12 @@ export function ToDoReducer(state = INITIAL_STATE, action: Action): IToDoItem[] 
       return action.payload;
     case ToDoActions.TODO.ADD_ITEM:
       return [...state, action.payload];
-    case ToDoActions.TODO.TOGGLE_ITEM:
+    case ToDoActions.TODO.UPDATE_ITEM:
       return state.map(todo => {
         if (todo.id !== action.payload.id) {
           return todo;
         }
-        return Object.assign({}, todo, {
-          completed: !todo.completed
-        });
+        return action.payload;
       });
     default:
       return state;
